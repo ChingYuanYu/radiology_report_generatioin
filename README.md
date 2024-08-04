@@ -10,15 +10,14 @@ This repository is the official implementation of LLaVA-NeXT-Interleave for radi
 To install requirements:
 
 ```setup
-# clone repo llms-finetune
-git clone https://github.com/zjysteven/lmms-finetune.git
-cd path of llms-finetune
+git clone git@github.com:ChingYuanYu/radiology_report_generatioin.git
+cd radiology_report_generatioin/lmms-finetune
 python -m pip install -r requirements.txt
 python -m pip install --no-cache-dir --no-build-isolation flash-attn
 
 # clone repo GREEN
 git clone git@github.com:Stanford-AIMI/GREEN.git
-cd path of GREEN
+cd GREEN
 pip install -e .
 ```
 
@@ -74,12 +73,12 @@ python preprocessing.py --input_path <path_to_input_data> --output_path <path_to
 
 ## Training
 
-set up all the augmnets in example_image.sh
+set up all the augmnets in lmms-finetune/example_scripts/example_image.sh
 
 To train the model, run this command:
 
 ```train
-sh ./example_scripts/example_image.sh
+sh lmms-finetune/example_scripts/example_image.sh
 ```
 
 ## Trained Models
@@ -101,7 +100,7 @@ To compute the evaluation metrics, run:
 
 green_evaluation.ipynb
 
-Note: I add a variable batch_size to function compute in green.py since the limitation of GPU RAM
+Note: I added a **batch_size** parameter to the **compute** function in green.py due to the GPU RAM limitations.
 
 
 
